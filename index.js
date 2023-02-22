@@ -15,11 +15,17 @@ function getComputerChoice() {
 
 function oneRound(playerChoice, computerChoice) {
 	if (computerChoice === playerChoice) {
-		return "It's a tie";
+		return {outcome: "draw", message: "It's a tie"};
 	} else if (computerChoice === winningMatch[playerChoice]) {
-		return `You win! ${playerChoice} beats ${computerChoice}`;
+		return {
+			outcome: "win",
+			message: `You win! ${playerChoice} beats ${computerChoice}`;
+		}
 	} else {
-		return `You lose! ${computerChoice} beats ${playerChoice}`;
+		return {
+			outcome: "loss", 
+			message: `You lose! ${computerChoice} beats ${playerChoice}`;
+		}
 	}
 }
 console.log(getComputerChoice());
