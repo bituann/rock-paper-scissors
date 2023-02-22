@@ -1,12 +1,37 @@
 // Since this is a node project for now, we'll require input using node methods
 const prompt = require("prompt-sync")();
 
-const choices = ["rock", "paper", "scissors"];
-const winningMatch = {
-	rock: "scissors",
-	paper: "rock",
-	scissors: "paper",
-};
+
+
+
+function game() {
+	const choices = ["rock", "paper", "scissors"];
+	const winningMatch = {
+		rock: "scissors", 
+		paper: "rock", 
+		scissors: "paper",
+     }
+	let scores = {
+		playerScore: 0,
+		computerScore: 0,
+		tie: 0
+	}
+
+	for (let i = 0; i < 5; i++) {
+		console.log(`Round ${i + 1} of 5`)
+		let playerChoice = prompt("Rock, paper, or scissors? ")
+		let match = oneRound(playerChoice, getComputerChoice());
+		console.log(match.message);
+		updateScore(match.outcome);
+	}
+
+	let gameOutcome = determineWinner(scores)
+	let outcomeText = announceOutcome(gameOutcome)
+	console.log(outcomeText)
+}
+
+
+
 
 function getComputerChoice() {
 	let randomIndex = Math.floor(Math.random() * 3);
