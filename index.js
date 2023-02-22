@@ -28,5 +28,14 @@ function oneRound(playerChoice, computerChoice) {
 		}
 	}
 }
-console.log(getComputerChoice());
-console.log(oneRound(getComputerChoice()));
+
+function keepScore(oneRoundOutcome) {
+	switch(oneRoundOutcome) {
+		case "draw":
+			break
+		case "win":
+			playerScore++
+		case "loss":
+			computerScore++
+	}
+}
