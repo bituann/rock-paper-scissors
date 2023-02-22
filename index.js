@@ -20,6 +20,10 @@ function game() {
 	for (let i = 0; i < 5; i++) {
 		console.log(`Round ${i + 1} of 5`)
 		let playerChoice = prompt("Rock, paper, or scissors? ")
+		if (!choices.includes(playerChoice)) {
+			console.log("That's not a valid choice \n")
+			game();
+		}
 		let match = oneRound(playerChoice, getComputerChoice());
 		console.log(match.message);
 		updateScore(match.outcome);
