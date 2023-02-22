@@ -78,10 +78,8 @@ function announceOutcome(outcome) {
 	switch (outcome) {
 		case "tie":
 			return "Evenly Matched! It's a tie."
-			break
 		case "player":
 			return "Congratulations! You won!"
-			break
 		case "computer":
 			return "Too bad, you lost"
 	}
