@@ -1,9 +1,5 @@
 // Since this is a node project for now, we'll require input using node methods
-const readline = require("readline");
-const rl = readline.createInterface({
-	input: process.stdin,
-	output: process.stdout,
-});
+const prompt = require("prompt-sync")();
 
 const choices = ["rock", "paper", "scissors"];
 const winningMatch = {
@@ -14,5 +10,17 @@ const winningMatch = {
 
 function getComputerChoice() {
 	let randomIndex = Math.floor(Math.random() * 3);
-	console.log(choices[randomIndex]);
+	return choices[randomIndex];
 }
+
+function oneRound(playerChoice, computerChoice) {
+	if (computerChoice === playerChoice) {
+		return "It's a tie";
+	} else if (computerChoice === winningMatch[playerChoice]) {
+		return `You win! ${playerChoice} beats ${computerChoice}`;
+	} else {
+		return `You lose! ${computerChoice} beats ${playerChoice}`;
+	}
+}
+console.log(getComputerChoice());
+console.log(oneRound(getComputerChoice()));
