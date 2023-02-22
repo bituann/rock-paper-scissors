@@ -57,13 +57,13 @@ function oneRound(playerChoice, computerChoice) {
 function updateScore(oneRoundOutcome) {
 	switch(oneRoundOutcome) {
 		case "draw":
-			draw++
+			scores.tie++
 			break
 		case "win":
-			playerScore++
+			scores.playerScore++
 			break
 		case "loss":
-			computerScore++
+			scores.computerScore++
 			break
 	}
 }
