@@ -67,3 +67,9 @@ function updateScore(oneRoundOutcome) {
 			break
 	}
 }
+
+function determineWinner(score) {
+	if (score.playerScore === score.computerScore) return "tie"
+	if (score.playerScore > score.computerScore) return "player"
+	if (score.playerScore < score.computerScore) return "computer"
+}
