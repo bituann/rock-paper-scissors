@@ -29,13 +29,16 @@ function oneRound(playerChoice, computerChoice) {
 	}
 }
 
-function keepScore(oneRoundOutcome) {
+function updateScore(oneRoundOutcome) {
 	switch(oneRoundOutcome) {
 		case "draw":
+			draw++
 			break
 		case "win":
 			playerScore++
+			break
 		case "loss":
 			computerScore++
+			break
 	}
 }
