@@ -17,10 +17,14 @@ function game() {
 	for (let i = 0; i < 5; i++) {
 		console.log(`Round ${i + 1} of 5`);
 		let playerChoice = prompt("Rock, paper, or scissors? ");
-		if (!choices.includes(playerChoice)) {
+
+		//Input validation
+		while (!choices.includes(playerChoice)) {
 			console.log("That's not a valid choice \n");
-			game();
+			console.log(`Round ${i + 1} of 5`);
+			playerChoice = prompt("Rock, paper, or scissors? ");
 		}
+
 		let match = oneRound(
 			playerChoice,
 			getComputerChoice(choices),
