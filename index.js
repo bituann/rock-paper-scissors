@@ -16,13 +16,13 @@ function game() {
 
 	for (let i = 0; i < 5; i++) {
 		console.log(`Round ${i + 1} of 5`);
-		let playerChoice = prompt("Rock, paper, or scissors? ");
+		let playerChoice = prompt("Rock, paper, or scissors? ").toLowerCase();
 
 		//Input validation
 		while (!choices.includes(playerChoice)) {
 			console.log("That's not a valid choice \n");
 			console.log(`Round ${i + 1} of 5`);
-			playerChoice = prompt("Rock, paper, or scissors? ");
+			playerChoice = prompt("Rock, paper, or scissors? ").toLowerCase();
 		}
 
 		let match = oneRound(
