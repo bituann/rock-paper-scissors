@@ -23,7 +23,7 @@ function game() {
 		if (playerChoice === "exit") return;
 
 		//Input validation
-		while (!choices.includes(playerChoice) || playerChoice !== "exit") {
+		while (!choices.includes(playerChoice)) {
 			if (playerChoice === "exit") return;
 
 			console.log("That's not a valid choice \n");
