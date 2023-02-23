@@ -14,6 +14,8 @@ function game() {
 		tie: 0,
 	};
 
+	console.log("Type 'exit' to cancel");
+
 	for (let i = 0; i < 5; i++) {
 		console.log(`Round ${i + 1} of 5`);
 		let playerChoice = prompt("Rock, paper, or scissors? ").toLowerCase();
@@ -24,6 +26,8 @@ function game() {
 			console.log(`Round ${i + 1} of 5`);
 			playerChoice = prompt("Rock, paper, or scissors? ").toLowerCase();
 		}
+
+		if (playerChoice === "exit") return;
 
 		let match = oneRound(
 			playerChoice,
