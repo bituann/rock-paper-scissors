@@ -20,14 +20,16 @@ function game() {
 		console.log(`Round ${i + 1} of 5`);
 		let playerChoice = prompt("Rock, paper, or scissors? ").toLowerCase();
 
+		if (playerChoice === "exit") return;
+
 		//Input validation
-		while (!choices.includes(playerChoice)) {
+		while (!choices.includes(playerChoice) || playerChoice !== "exit") {
+			if (playerChoice === "exit") return;
+
 			console.log("That's not a valid choice \n");
 			console.log(`Round ${i + 1} of 5`);
 			playerChoice = prompt("Rock, paper, or scissors? ").toLowerCase();
 		}
-
-		if (playerChoice === "exit") return;
 
 		let match = oneRound(
 			playerChoice,
